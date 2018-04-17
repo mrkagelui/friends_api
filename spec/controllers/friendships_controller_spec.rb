@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::FriendshipsController, type: :controller do
-  before(:all) do
+  before(:each) do
   	@user1 = User.create email: "alice@bob.com"
   	@user2 = User.create email: "bob@alice.com"
   end
