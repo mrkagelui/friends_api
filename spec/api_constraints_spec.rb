@@ -1,9 +1,8 @@
-require 'spec_helper'
-require 'api_constraints'
+require 'rails_helper'
 
-describe APIConstraints do
-  let(:api_constraints_v1) { APIConstraints.new(version: 1) }
-  let(:api_constraints_v2) { APIConstraints.new(version: 2, default: true) }
+describe Constraint::Api_constraints do
+  let(:api_constraints_v1) { Constraint::Api_constraints.new(version: 1) }
+  let(:api_constraints_v2) { Constraint::Api_constraints.new(version: 2, default: true) }
 
   context "matches?" do
   	it "should match when version provided in header" do
