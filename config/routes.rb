@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       post 'add_friend', to: 'friendships#create'
       get 'get_friends', to: 'friendships#get_friends'
       get 'get_common_friends', to: 'friendships#get_common_friends'
+      post 'follow', to: 'followings#create'
     end
   end
 end
