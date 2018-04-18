@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       post 'signup', to: 'users#create'
       post 'add_friend', to: 'friendships#create'
       get 'get_friends', to: 'friendships#get_friends'
+      get 'get_common_friends', to: 'friendships#get_common_friends'
     end
   end
 end
