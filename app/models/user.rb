@@ -12,4 +12,12 @@ class User < ApplicationRecord
   def friends
   	self.friendships_as_user1.collect(&:user_where_it_is_user2).collect(&:id).push(*self.friendships_as_user2.collect(&:user_where_it_is_user1).collect(&:id))
   end
+
+  def blockers
+    self.blockades_as_blockee.collect(&:user_where_it_is_blocker).collect(&:id)
+  end
+
+  def followers
+    self.followings_as_source.collect(&:user_where_it_is_audience).collect(&:id)
+  end
 end

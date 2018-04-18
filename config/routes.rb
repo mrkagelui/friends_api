@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'get_common_friends', to: 'friendships#get_common_friends'
       post 'follow', to: 'followings#create'
       post 'block', to: 'blockades#create'
+      post 'get_receivers', to: 'update/receivers#retrieve'
     end
   end
 end
