@@ -10,4 +10,10 @@ class Api::V1::FriendshipsController < ApplicationController
   	end
   	render json: { success: true }, status: :created
   end
+
+  def get_friends
+    user = User.find_by! email: params[:email]
+    friends = user.friends.map { |friend_id| User.find(friend_id).email }
+    render json: { success: true, friends: friends, count: friends.length }, status: :ok
+  end
 end

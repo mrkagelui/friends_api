@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: APIConstraints.new(version: 1, default: true) do
       post 'signup', to: 'users#create'
       post 'add_friend', to: 'friendships#create'
-      get 'get_friends', to: 'users#get_friends'
+      get 'get_friends', to: 'friendships#get_friends'
     end
   end
 end
