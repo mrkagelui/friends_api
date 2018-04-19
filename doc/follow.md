@@ -14,8 +14,7 @@ curl -X POST -H 'Content-Type:application/json' -d '{"requestor":"a@b.com", "tar
 
 If both users exist:
 
-```{"success":true}
-```
+```{"success":true}```
 
 ## Possible Error
 

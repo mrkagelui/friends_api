@@ -14,8 +14,7 @@ curl -X GET -H 'Content-Type:application/json' -d '{"friends":["a@b.com","b@a.co
 
 If the users exist and they have some common friends, friends detail that resemble:
 
-```{"success":true,"friends":["c@common.com"],"count":1}
-```
+```{"success":true,"friends":["c@common.com"],"count":1}```
 
 You may specify more than two emails
 

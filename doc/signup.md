@@ -14,8 +14,7 @@ curl -X POST -H 'Content-Type:application/json' -d '{"email":"a@b.com"}' https:/
 
 User detail that resembles:
 
-```{"id":1,"email":"a@b.com","created_at":"2018-04-19T02:35:14.824Z","updated_at":"2018-04-19T02:35:14.824Z"}
-```
+```{"id":1,"email":"a@b.com","created_at":"2018-04-19T02:35:14.824Z","updated_at":"2018-04-19T02:35:14.824Z"}```
 
 ## Possible Error
 

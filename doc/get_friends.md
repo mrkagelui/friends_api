@@ -14,8 +14,7 @@ curl -X GET -H 'Content-Type:application/json' -d '{"email":"a@b.com"}' https://
 
 If the user exist, friends detail that resemble:
 
-```{"success":true,"friends":["b@a.com"],"count":1}
-```
+```{"success":true,"friends":["b@a.com"],"count":1}```
 
 ## Possible Error
 

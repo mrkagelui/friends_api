@@ -14,8 +14,7 @@ curl -X POST -H 'Content-Type:application/json' -d '{"sender":"a@b.com","text":"
 
 If both users exist:
 
-```{"success":true,"recipients":["c@common.com","stranger@test.com"]}
-```
+```{"success":true,"recipients":["c@common.com","stranger@test.com"]}```
 
 ## Possible Error
 

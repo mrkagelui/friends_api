@@ -14,8 +14,7 @@ curl -X POST -H 'Content-Type:application/json' -d '{"requestor":"a@b.com", "tar
 
 If both users exist:
 
-```{"success":true}
-```
+```{"success":true}```
 
 Note: after blocking, if the users are not already friends, attempt to add friendship between them will fail, see [doc/add_friend](doc/add_friend.md#possible-error)
 

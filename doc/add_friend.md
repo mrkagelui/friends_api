@@ -14,8 +14,7 @@ curl -X POST -H 'Content-Type:application/json' -d '{"friends":["a@b.com","b@a.c
 
 If both users exist:
 
-```{"success":true}
-```
+```{"success":true}```
 
 ## Possible Error
 
