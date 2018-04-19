@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :blockades_as_blockee, class_name: "Blockade", foreign_key: "user_where_it_is_blockee_id", dependent: :destroy
 
   def friends
-  	self.friendships_as_user1.collect(&:user_where_it_is_user2).collect(&:id).push(*self.friendships_as_user2.collect(&:user_where_it_is_user1).collect(&:id))
+    self.friendships_as_user1.collect(&:user_where_it_is_user2).collect(&:id) | self.friendships_as_user2.collect(&:user_where_it_is_user1).collect(&:id)
   end
 
   def blockers
