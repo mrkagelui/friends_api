@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416145725) do
+ActiveRecord::Schema.define(version: 20180419033958) do
 
   create_table "blockades", force: :cascade do |t|
     t.integer "user_where_it_is_blocker_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180416145725) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_where_it_is_blockee_id"], name: "index_blockades_on_user_where_it_is_blockee_id"
+    t.index ["user_where_it_is_blocker_id", "user_where_it_is_blockee_id"], name: "blockade_index", unique: true
     t.index ["user_where_it_is_blocker_id"], name: "index_blockades_on_user_where_it_is_blocker_id"
   end
 
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180416145725) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_where_it_is_audience_id"], name: "index_followings_on_user_where_it_is_audience_id"
+    t.index ["user_where_it_is_source_id", "user_where_it_is_audience_id"], name: "following_index", unique: true
     t.index ["user_where_it_is_source_id"], name: "index_followings_on_user_where_it_is_source_id"
   end
 
@@ -35,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180416145725) do
     t.integer "user_where_it_is_user2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_where_it_is_user1_id", "user_where_it_is_user2_id"], name: "friendship_index", unique: true
     t.index ["user_where_it_is_user1_id"], name: "index_friendships_on_user_where_it_is_user1_id"
     t.index ["user_where_it_is_user2_id"], name: "index_friendships_on_user_where_it_is_user2_id"
   end

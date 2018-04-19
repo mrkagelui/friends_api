@@ -5,11 +5,11 @@ RSpec.describe Api::V1::Update::ReceiversController, type: :controller do
   	# user <-(friend)-> user3, user1 -(follow)-> user3, user2 -(block)-> user3
   	# user1 <-(friend)-> user2, user1 -(block)-> user2
     @users = create_list(:user, 5)
-    Friendship.create user_where_it_is_user1: @users[0], user_where_it_is_user2: @users[3]
-    Friendship.create user_where_it_is_user1: @users[1], user_where_it_is_user2: @users[2]
-    Following.create user_where_it_is_source: @users[3], user_where_it_is_audience: @users[1]
-    Blockade.create user_where_it_is_blocker: @users[2], user_where_it_is_blockee: @users[3]
-    Blockade.create user_where_it_is_blocker: @users[1], user_where_it_is_blockee: @users[2]
+    Friendship.find_or_create_by user_where_it_is_user1: @users[0], user_where_it_is_user2: @users[3]
+    Friendship.find_or_create_by user_where_it_is_user1: @users[1], user_where_it_is_user2: @users[2]
+    Following.find_or_create_by user_where_it_is_source: @users[3], user_where_it_is_audience: @users[1]
+    Blockade.find_or_create_by user_where_it_is_blocker: @users[2], user_where_it_is_blockee: @users[3]
+    Blockade.find_or_create_by user_where_it_is_blocker: @users[1], user_where_it_is_blockee: @users[2]
   end
 
   context "when retrieving recipients of an update" do

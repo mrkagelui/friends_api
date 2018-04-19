@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe Api::V1::FriendshipsController, type: :controller do
   before(:each) do
     @test_users = create_list(:user, 4)
-    Friendship.create user_where_it_is_user1: @test_users[0], user_where_it_is_user2: @test_users[3]
-    Friendship.create user_where_it_is_user1: @test_users[1], user_where_it_is_user2: @test_users[3]
-    Friendship.create user_where_it_is_user1: @test_users[2], user_where_it_is_user2: @test_users[3]
+    Friendship.find_or_create_by user_where_it_is_user1: @test_users[0], user_where_it_is_user2: @test_users[3]
+    Friendship.find_or_create_by user_where_it_is_user1: @test_users[1], user_where_it_is_user2: @test_users[3]
+    Friendship.find_or_create_by user_where_it_is_user1: @test_users[2], user_where_it_is_user2: @test_users[3]
   end
 
   context "when doing POST create" do
