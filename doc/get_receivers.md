@@ -12,9 +12,11 @@ curl -X POST -H 'Content-Type:application/json' -d '{"sender":"a@b.com","text":"
 
 ## Expected result
 
-If both users exist:
+If sender exists:
 
 ```{"success":true,"recipients":["c@common.com","stranger@test.com"]}```
+
+Note that, if the mentioned email doesn't exist, no error will be provided.
 
 ## Possible Error
 
