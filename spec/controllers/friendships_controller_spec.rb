@@ -22,6 +22,12 @@ RSpec.describe Api::V1::FriendshipsController, type: :controller do
       post :create, { params: { friends: [@test_users[1].email, "bob@cali.com"] }, format: :json }
       expect(response).to have_http_status :not_found
     end
+
+    it "cannot add friend if one of them is blocking another" do
+      Blockade.find_or_create_by user_where_it_is_blocker: @test_users[1], user_where_it_is_blockee: @test_users[2]
+      post :create, { params: { friends: [@test_users[1].email, @test_users[2].email] }, format: :json }
+      expect(response).to have_http_status :bad_request
+    end
   end
 
   context "when doing GET get_friends" do
