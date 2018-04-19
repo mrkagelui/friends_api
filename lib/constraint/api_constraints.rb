@@ -6,7 +6,8 @@ module Constraint
     end
   
     def matches?(request)
-    	(request.headers.key?('Accept')) ? request.headers['Accept'].include?("application/vnd.friends.v#{@version}") : @default
+    	result = (request.headers.key?('Accept') && request.headers['Accept'].include?("application/vnd.friends.v")) ?
+    			 request.headers['Accept'].include?("application/vnd.friends.v#{@version}") : @default
     end
   end
 end
